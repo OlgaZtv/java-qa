@@ -14,6 +14,13 @@ public class HomeWork {
      * */
     public static int reverse(int value) {
         // todo
+        int n1 = (value / 1000); //первая цифра
+        int n2 = ((value / 100) % 10); //вторая цифра
+        int n3 = ((value / 10) % 10); //третья цифра
+        int n4 = (value % 10); //четвертая цифра
+        //someValue = System.out.println("Обратное число: " + n4 + n3 + n2 + n1);
+        // return someValue;
+        //в теории мы как-то должны собрать число и вернуть число, но не понимаю как
         return 0;
     }
 
@@ -26,9 +33,10 @@ public class HomeWork {
      * подумать над кейсами
      * */
     public static int difference(int value) {
-        // todo
-        // my code
-        return 0;
+        int firstTwoDigits = value / 100;
+        int lastTwoDigits = value % 100;
+        int result = firstTwoDigits - lastTwoDigits;
+        return result;
     }
 
 }

@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 
 public class HomeWorkTests {
 
+
     @Test
     void testReverse1() {
-        //actual = HomeWork.reverse(1234);
         int value = 1234;
+        int actual = HomeWork.reverse(value);
         int expectedResult = 4321;
-        Assertions.assertEquals(expectedResult, value);
+        Assertions.assertEquals(expectedResult, actual);
     }
 
     @Test
@@ -18,17 +19,8 @@ public class HomeWorkTests {
         // Тест с числом, содержащим нули в начале
         int value = 1000;
         int expectedResult = 1;
-        //actual = HomeWork.reverse(1234);
-        Assertions.assertEquals(expectedResult, value);
-    }
-
-    @Test
-    void testReverse3() {
-        // Тест с числом, содержащим одну цифру
-        int value = 5;
-        int expectedResult = 5;
-        //actual = HomeWork.reverse(value);
-        Assertions.assertEquals(expectedResult, value);
+        int actual = HomeWork.reverse(value);
+        Assertions.assertEquals(expectedResult, actual);
     }
 
     @Test
@@ -36,8 +28,8 @@ public class HomeWorkTests {
         // Тест с числом, содержащим одинаковые цифры
         int value = 1111;
         int expectedResult = 1111;
-        //actual = HomeWork.reverse(value);
-        Assertions.assertEquals(expectedResult, value);
+        int actual = HomeWork.reverse(value);
+        Assertions.assertEquals(expectedResult, actual);
     }
 
     @Test
@@ -81,6 +73,17 @@ public class HomeWorkTests {
         int expected = 12 - 34;
         System.out.println(expected);
         int actual = HomeWork.difference(number);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testDiff5() {
+        HomeWork.difference(10);
+        // Тест с числом, где две цифры
+        int number = 10;
+        int expected = 0 - 10;
+        int actual = HomeWork.difference(number);
+        System.out.println(actual);
         Assertions.assertEquals(expected, actual);
     }
 }

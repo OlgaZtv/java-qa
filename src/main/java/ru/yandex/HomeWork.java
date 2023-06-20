@@ -18,10 +18,9 @@ public class HomeWork {
         int n2 = ((value / 100) % 10); //вторая цифра
         int n3 = ((value / 10) % 10); //третья цифра
         int n4 = (value % 10); //четвертая цифра
-        //someValue = System.out.println("Обратное число: " + n4 + n3 + n2 + n1);
-        // return someValue;
-        //в теории мы как-то должны собрать число и вернуть число, но не понимаю как
-        return 0;
+        int reversedNumber = n4 * 1000 + n3 * 100 + n2 * 10 + n1;
+        System.out.println(reversedNumber);
+        return reversedNumber;
     }
 
     /**
@@ -34,7 +33,9 @@ public class HomeWork {
      * */
     public static int difference(int value) {
         int firstTwoDigits = value / 100;
+        System.out.println(firstTwoDigits);
         int lastTwoDigits = value % 100;
+        System.out.println(lastTwoDigits);
         int result = firstTwoDigits - lastTwoDigits;
         return result;
     }

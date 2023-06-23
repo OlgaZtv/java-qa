@@ -1,5 +1,7 @@
 package ru.yandex.lesson2;
 
+import ru.yandex.lesson2.homework.hw2.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -20,5 +22,14 @@ public class Main {
 
         Line line = Line.of(1, 3, 1, 5);
 
+        //Homework2 - с Lombok все быстрее - но специально создавала с билдером
+
+        SerialInventory serialInventory = SerialInventoryBuilder.builder()
+                .withSerialKey(12354)
+                .withLoc(new Loc(12345, "Loc", 12, 11, 10, 152, 110, 111, "Zone"))
+                .withLot(new Lot(124, 1, new Sku(15, 14,"Товар")))
+                .withQuantity(12)
+                .withSku(new Sku(15, 14,"Товар"))
+                .build();
     }
 }

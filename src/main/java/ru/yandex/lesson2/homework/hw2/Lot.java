@@ -5,7 +5,7 @@ public class Lot {
     private long serialKey;
     private long quantity;
 
-    Sku sku;
+    private Sku sku;
 
     public Lot(long serialKey, long quantity, Sku sku) {
         this.serialKey = serialKey;

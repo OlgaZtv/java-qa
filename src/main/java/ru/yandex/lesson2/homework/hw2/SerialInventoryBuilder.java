@@ -4,9 +4,9 @@ public class SerialInventoryBuilder {
 
     private long serialKey;
     private long quantity;
-    Sku sku;
-    Lot lot;
-    Loc loc;
+    private Sku sku;
+    private Lot lot;
+    private Loc loc;
 
     public static SerialInventoryBuilder builder() {
         return new SerialInventoryBuilder();

@@ -4,9 +4,9 @@ public class SerialInventory {
     private long serialKey;
     private long quantity;
 
-    Sku sku;
-    Lot lot;
-    Loc loc;
+    private Sku sku;
+    private Lot lot;
+    private Loc loc;
 
     public SerialInventory(long serialKey, long quantity, Sku sku, Lot lot, Loc loc) {
         this.serialKey = serialKey;

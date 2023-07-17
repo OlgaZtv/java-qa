@@ -1,0 +1,11 @@
+{
+  "message": "404 NOT_FOUND \"Location ASFASF not found\"",
+  "status": "NOT_FOUND",
+  "resourceType": "LOC",
+  "wmsErrorCode": {
+    "status": "NOT_FOUND",
+    "resourceType": "LOC"
+  }
+}
+
+body("wmsErrorCode.status", is("NOT_FOUND"))

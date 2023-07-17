@@ -9,6 +9,8 @@ import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
+import ru.yandex.lesson7.TimeMeasurer;
+
 public class Main {
 
 
@@ -24,24 +26,25 @@ public class Main {
     }
 
     public static void fillFile(String name) {
-        long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
 //        byte[] array = new byte[1024];
 //        for (int i = 0; i < 1024; i++) {
 //            array[i] = 'a';
 //        }
-        try(BufferedWriter fos = new BufferedWriter(new FileWriter(name))) {
-            for (int i = 0; i < 1000000; i++) {
-                fos.append('a');
+        try (FileOutputStream fos = new FileOutputStream(name)) {
+            for (int i = 0; i < 100000; i++) {
+                fos.write('a');
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        long end = System.currentTimeMillis();
-        System.out.println("Time: " + (end - start) + " ms.");
+        // long end = System.currentTimeMillis();
+        // System.out.println("Time: " + (end - start) + " ms.");
     }
 
     public static void main(String[] args) {
-        fillFile("bigfile.txt");
+        TimeMeasurer measurer = new TimeMeasurer();
+        measurer.printInvokeTime(() -> writeStringLn("Hello world", "bigfile.txt"));
         //writeStringLn("Hello world", "hello.png");
 //        try (FileInputStream is = new FileInputStream("file.txt")) {
 ////            String s = new String(is.readAllBytes());
@@ -50,15 +53,15 @@ public class Main {
 ////            e.printStackTrace();
 ////        }
 
-        try (Scanner in = new Scanner(new File("file.txt"))) {
-            int n = in.nextInt();
-            for (int i = 0; i < n; i++) {
-                int current = in.nextInt();
-                System.out.println(current);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try (Scanner in = new Scanner(new File("file.txt"))) {
+//            int n = in.nextInt();
+//            for (int i = 0; i < n; i++) {
+//                int current = in.nextInt();
+//                System.out.println(current);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }
 }

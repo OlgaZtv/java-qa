@@ -9,6 +9,10 @@ public class PredictResponse {
     private Long pos;
     private List<String> text;
 
+    public Integer code;
+
+    public String message;
+
     public Boolean getEndOfWord() {
         return endOfWord;
     }
@@ -31,5 +35,14 @@ public class PredictResponse {
 
     public void setText(List<String> text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return "PredictResponse{" +
+                "endOfWord=" + endOfWord +
+                ", pos=" + pos +
+                ", text=" + text +
+                '}';
     }
 }

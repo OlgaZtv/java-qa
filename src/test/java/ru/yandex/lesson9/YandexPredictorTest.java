@@ -5,8 +5,11 @@ import java.util.List;
 import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ru.yandex.BaseTest;
@@ -25,6 +28,21 @@ class YandexPredictorTest extends BaseTest {
     @BeforeAll
     static void beforeAll() {
         RestAssured.baseURI = "https://predictor.yandex.net/api/v1/predict.json/";
+    }
+
+    @BeforeEach
+    void setUp() {
+        System.out.println("Begin");
+    }
+
+    @AfterEach
+    void tearDown() {
+        System.out.println("End");
+    }
+
+    @AfterAll
+    static void after() {
+
     }
 
     @Test

@@ -1,0 +1,3 @@
+Написать тесты на
+https://yandex.ru/dev/predictor/doc/dg/reference/complete.html
+при помощи RestAssured
